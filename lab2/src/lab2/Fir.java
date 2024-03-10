@@ -22,6 +22,12 @@ public class Fir extends Thread {
                 j++;j--;
             } c++;
             model.setProgressValue(id,c);
+
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
