@@ -7,7 +7,7 @@ public class Main {
     public static void main(String args[]){
         Model model=new Model(noOfThreads);
         Window win=new Window(noOfThreads);
-        model.addObserver(win);
+        model.addObserver(win); // window observes model
 
         for (int i = 0; i < noOfThreads; i++) {
             Fir controller = new Fir(model, win, i, processorLoad);

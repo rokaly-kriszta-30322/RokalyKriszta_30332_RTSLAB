@@ -1,12 +1,12 @@
 package lab2;
 
-public class Fir extends Thread {
+public class Fir extends Thread { // controller
     Model model;
     int id;
     Window win;
     int processorLoad;
 
-    Fir(Model model, Window win, int id, int procLoad){
+    Fir(Model model, Window win, int id, int procLoad){ // connects everything
 
         this.model=model;
         this.win=win;
@@ -15,16 +15,17 @@ public class Fir extends Thread {
 
     }
 
-    public void run(){
+    public void run(){ // actual progress
         int c=0;
         while(c<1000){
             for(int j=0;j<this.processorLoad;j++){
                 j++;j--;
-            } c++;
+            }
+            c++;
             model.setProgressValue(id,c);
 
             try {
-                Thread.sleep(10);
+                Thread.sleep(10); // delay
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
